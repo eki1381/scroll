@@ -1,57 +1,40 @@
 <template>
-  <div class="container">
-    <PanelOne data-textcolor="#000000" data-bgcolor="#9adff8" />
-    <PanelTwo data-textcolor="#000000" data-bgcolor="#2d92b8" />
-    <PanelThree data-textcolor="#000000" data-bgcolor="#FFDB5E" />
-    <PanelFour data-bgcolor="#FFDB5E" data-textcolor="#000000" />
-    <PanelFive data-bgcolor="#FFDB5E" data-textcolor="#000000" />
-    <PanelSix data-textcolor="#000000" data-bgcolor="#40DFAF" />
-    <PanelSeven data-textcolor="#000000" data-bgcolor="#40DFAF" />
-    <PanelEight data-textcolor="#000000" data-bgcolor="#40DFAF" />
-    <PanelNine data-textcolor="#000000" data-bgcolor="#40DFAF" />
-    <PanelTen data-textcolor="#000000" data-bgcolor="#9adff8" />
-    <PanelEleven data-textcolor="#000000" data-bgcolor="#9adff8" />
-    <PanelTwelve data-textcolor="#000000" data-bgcolor="#9adff8" />
-    <PanelThirteen data-textcolor="#000000" data-bgcolor="#9adff8" />
+  <div data-scroll class="panel" style="padding-top: 0;">
+    <div style="height: 100vh; width: 30vw; z-index: 0; position: relative;">
+      <v-img
+        class="photo"
+        :height="'300px'"
+        src="https://raw.githubusercontent.com/eki1381/Storytelling/main/section8_photo.png"
+        style="width: 100%; padding: 0;"
+      ></v-img>
+    </div>
+    <div style="width: 80%; display: flex; flex-direction: column; justify-content: center;; z-index: 1; position: absolute; padding-left: 300px">
+      <div class="title" style="margin-bottom: 60px; text-align: center ">'Tawa' Migran dari Mas Bejo</div>
+      <v-img
+        class="profile"
+        :height="'200px'"
+        :width="'100%'"
+        style="margin-bottom: 60px; text-align: center;"
+        src="https://raw.githubusercontent.com/eki1381/Storytelling/main/section8_profile.png"
+      ></v-img>
+      <div class="subtitle">
+        Bejo terpilih untuk program magang di perusahaan besar nasional yang
+        terletak di Jakarta. Setelah kegalauan panjang untuk meninggalkan
+        keluarga, Mas Bejo memutuskan untuk pindah ke kota. Berkat keuletannya,
+        Mas Bejo diangkat menjadi pegawai tetap. Dia juga berhasil memberi rumah
+        di pinggiran kota dan berkeluarga di sana. Keputusannya untuk bermigrasi
+        yang diambil Mas Bejo membuahkan hasil manis.
+      </div>
+    </div>
   </div>
 </template>
-
+    
 <script>
 import LocomotiveScroll from "locomotive-scroll";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import PanelOne from "./components/PanelOne.vue";
-import PanelTwo from "./components/PanelTwo.vue";
-import PanelThree from "./components/PanelThree.vue";
-import PanelFour from "./components/PanelFour.vue";
-import PanelFive from "./components/PanelFive.vue";
-import PanelSix from "./components/PanelSix.vue";
-import PanelSeven from "./components/PanelSeven.vue";
-import PanelEight from "./components/PanelEight.vue";
-import PanelNine from "./components/PanelNine.vue";
-import PanelTen from "./components/PanelTen.vue";
-import PanelEleven from "./components/PanelEleven.vue";
-import PanelTwelve from "./components/PanelTwelve.vue";
-import PanelThirteen from "./components/PanelThirteen.vue";
-
 export default {
-  name: "App",
-  components: {
-    PanelOne,
-    PanelTwo,
-    PanelThree,
-    PanelFour,
-    PanelFive,
-    PanelSix,
-    PanelSeven,
-    PanelEight,
-    PanelNine,
-    PanelTen,
-    PanelEleven,
-    PanelTwelve,
-    PanelThirteen,
-  },
   mounted() {
     window.addEventListener("load", function () {
       gsap.registerPlugin(ScrollTrigger);
@@ -89,6 +72,10 @@ export default {
         pinType: pageContainer.style.transform ? "transform" : "fixed",
       });
 
+      // Pinning and horizontal scrolling
+
+      /* COLOR CHANGER */
+
       const scrollColorElems = document.querySelectorAll("[data-bgcolor]");
       scrollColorElems.forEach((colorSection, i) => {
         const prevBg = i === 0 ? "" : scrollColorElems[i - 1].dataset.bgcolor;
@@ -115,19 +102,23 @@ export default {
       });
 
       ScrollTrigger.addEventListener("refresh", () => scroller.update());
+
       ScrollTrigger.refresh();
     });
   },
 };
 </script>
-
-<style>
+    
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 :root {
   --text-color: #111;
   --bg-color: #b9b3a9;
 }
 
 body {
+  font-family: termina, sans-serif;
+  color: var(--text-color);
   background: var(--bg-color);
   transition: 0.3s ease-out;
   overflow-x: hidden;
@@ -136,52 +127,50 @@ body {
   overscroll-behavior: none;
 }
 
-section:not(.horizontal-scroll) {
+.panel {
   min-height: 100vh;
-  width: 100%;
   position: relative;
-  display: grid;
+  display: flex;
+  flex-direction: row;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 2rem;
   padding: 50px 10vw;
   margin: auto;
-  place-items: center;
 }
 
-img {
-  height: 80vh;
-  width: auto;
-  object-fit: cover;
-}
-
-.credit {
-  font-family: Termina, sans-serif;
-  a {
-    color: var(--text-color);
-  }
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.horizontal-scroll {
-  height: 100vh;
-  overflow: hidden;
+.text1 {
   display: flex;
-  left: 0;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.pin-wrap {
-  height: 100vh;
+.text2 {
   display: flex;
-  justify-content: flex-start;
+  justify-content: end;
+  margin-top: 20px;
+}
+
+.image {
+  widows: 100vw;
+  display: flex;
+  justify-content: start;
   align-items: center;
-  padding: 50px 10vw;
+}
 
-  & > * {
-    min-width: 60vw;
-    padding: 0 5vw;
-  }
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 32pt;
+  font-weight: bold;
+  text-align: right;
+}
+
+.subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 20pt;
+  text-align: justify;
 }
 </style>

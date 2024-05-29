@@ -1,18 +1,19 @@
-<template>
-  <div class="container">
-    <PanelOne data-textcolor="#000000" data-bgcolor="#9adff8" />
-    <PanelTwo data-textcolor="#000000" data-bgcolor="#2d92b8" />
-    <PanelThree data-textcolor="#000000" data-bgcolor="#FFDB5E" />
-    <PanelFour data-bgcolor="#FFDB5E" data-textcolor="#000000" />
-    <PanelFive data-bgcolor="#FFDB5E" data-textcolor="#000000" />
-    <PanelSix data-textcolor="#000000" data-bgcolor="#40DFAF" />
-    <PanelSeven data-textcolor="#000000" data-bgcolor="#40DFAF" />
-    <PanelEight data-textcolor="#000000" data-bgcolor="#40DFAF" />
-    <PanelNine data-textcolor="#000000" data-bgcolor="#40DFAF" />
-    <PanelTen data-textcolor="#000000" data-bgcolor="#9adff8" />
-    <PanelEleven data-textcolor="#000000" data-bgcolor="#9adff8" />
-    <PanelTwelve data-textcolor="#000000" data-bgcolor="#9adff8" />
-    <PanelThirteen data-textcolor="#000000" data-bgcolor="#9adff8" />
+<template >
+  <div class="horizontal-scroll">
+    <div class="pin-wrap">
+      <v-img
+        class="slide1"
+        :width="'100vw'"
+        :height="'auto'"
+        src="https://raw.githubusercontent.com/eki1381/Storytelling/main/section3_slide1.png"
+      ></v-img>
+      <v-img
+        class="slide2"
+        :width="'100vw'"
+        :height="'auto'"
+        src="https://raw.githubusercontent.com/eki1381/Storytelling/main/section3_slide2.png"
+      ></v-img>
+    </div>
   </div>
 </template>
 
@@ -21,37 +22,7 @@ import LocomotiveScroll from "locomotive-scroll";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import PanelOne from "./components/PanelOne.vue";
-import PanelTwo from "./components/PanelTwo.vue";
-import PanelThree from "./components/PanelThree.vue";
-import PanelFour from "./components/PanelFour.vue";
-import PanelFive from "./components/PanelFive.vue";
-import PanelSix from "./components/PanelSix.vue";
-import PanelSeven from "./components/PanelSeven.vue";
-import PanelEight from "./components/PanelEight.vue";
-import PanelNine from "./components/PanelNine.vue";
-import PanelTen from "./components/PanelTen.vue";
-import PanelEleven from "./components/PanelEleven.vue";
-import PanelTwelve from "./components/PanelTwelve.vue";
-import PanelThirteen from "./components/PanelThirteen.vue";
-
 export default {
-  name: "App",
-  components: {
-    PanelOne,
-    PanelTwo,
-    PanelThree,
-    PanelFour,
-    PanelFive,
-    PanelSix,
-    PanelSeven,
-    PanelEight,
-    PanelNine,
-    PanelTen,
-    PanelEleven,
-    PanelTwelve,
-    PanelThirteen,
-  },
   mounted() {
     window.addEventListener("load", function () {
       gsap.registerPlugin(ScrollTrigger);
@@ -89,6 +60,30 @@ export default {
         pinType: pageContainer.style.transform ? "transform" : "fixed",
       });
 
+      // Pinning and horizontal scrolling
+      let horizontalSections = document.querySelectorAll(".horizontal-scroll");
+
+      horizontalSections.forEach((horizontalSection) => {
+        let pinWrap = horizontalSection.querySelector(".pin-wrap");
+        let pinWrapWidth = pinWrap.offsetWidth;
+        let horizontalScrollLength = pinWrapWidth - window.innerWidth;
+        gsap.to(pinWrap, {
+          scrollTrigger: {
+            scroller: "[data-scroll-container]",
+            scrub: true,
+            trigger: horizontalSection,
+            pin: true,
+            start: "top top",
+            end: () => `+=${pinWrapWidth}`,
+            invalidateOnRefresh: true,
+          },
+          x: -horizontalScrollLength,
+          ease: "none",
+        });
+      });
+
+      /* COLOR CHANGER */
+
       const scrollColorElems = document.querySelectorAll("[data-bgcolor]");
       scrollColorElems.forEach((colorSection, i) => {
         const prevBg = i === 0 ? "" : scrollColorElems[i - 1].dataset.bgcolor;
@@ -115,20 +110,24 @@ export default {
       });
 
       ScrollTrigger.addEventListener("refresh", () => scroller.update());
+
       ScrollTrigger.refresh();
     });
   },
 };
 </script>
 
-<style>
+<style scoped>
 :root {
   --text-color: #111;
   --bg-color: #b9b3a9;
 }
 
 body {
+  font-family: termina, sans-serif;
+  color: var(--text-color);
   background: var(--bg-color);
+
   transition: 0.3s ease-out;
   overflow-x: hidden;
   max-width: 100%;
@@ -152,6 +151,32 @@ img {
   height: 80vh;
   width: auto;
   object-fit: cover;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 1;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  position: absolute;
+  top: 10vw;
+  left: 10vw;
+  z-index: 4;
+  overflow-wrap: break-word;
+  hyphens: auto;
+
+  @media (max-width: 768px) {
+    font-size: 16vw;
+  }
+
+  span {
+    display: block;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  max-width: 400px;
 }
 
 .credit {
@@ -183,5 +208,27 @@ img {
     min-width: 60vw;
     padding: 0 5vw;
   }
+}
+
+p {
+  position: absolute;
+  bottom: 10vw;
+  right: 10vw;
+  width: 200px;
+  line-height: 1.5;
+}
+
+.island1 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+
+.island2 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
 }
 </style>
