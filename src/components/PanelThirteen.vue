@@ -1,11 +1,35 @@
 <template>
   <div data-scroll class="panel">
-    <div class="subtitle" style="text-align: center; padding-left: 10px; padding-right: 10px; margin-bottom: 10px;">
+    <div
+      data-scroll
+      data-scroll-repeat="true"
+      data-scroll-class="animate"
+      data-scroll-speed="5"
+      class="subtitle"
+      style="
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 10px;
+      "
+    >
       Migrasi menjadi harapan bagi pembangunan berkelanjutan Indonesia. Migrasi
       dapat menumbuhkan perekonomian dan meningkatkan kualitas hidup. Tetapi,
       ada beban yang ditanggung daerah tujuan migrasi.
     </div>
-    <div class="title" style="text-align: center; padding-left: 10px; padding-right: 10px; margin-top: 10px;">
+    <div
+      class="title"
+      data-scroll
+      data-scroll-repeat="true"
+      data-scroll-class="animate"
+      data-scroll-speed="2"
+      style="
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-top: 10px;
+      "
+    >
       Alangkah baiknya persiapkan modal pengetahuan dan kepastian kerja ketika
       ingin bermigrasi seperti mas Bejo ya Meaning Makers!
     </div>

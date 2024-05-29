@@ -1,9 +1,9 @@
 <template>
   <div data-scroll class="panel">
-    <div class="title" style="margin-bottom: 50px; text-align: center">
+    <div class="title" style="margin-bottom: 20px; text-align: center">
       Migrasi tak selalu manis, ada 'Tangis' dari Bu Prihatin
     </div>
-    <div style="display: flex; margin-bottom: 50px; flex-direction: row; align-items: center;">
+    <div style="display: flex; margin-bottom: 20px; flex-direction: row; align-items: center;">
       <v-img
         class="photo"
         :height="'300px'"

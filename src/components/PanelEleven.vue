@@ -17,16 +17,17 @@
         style="
           border: 3px solid;
           border-radius: 25px;
-          background-color: #40dfaf;
           height: 100px;
           width: 50%;
           margin-right: 20px;
+          display: flex;
           justify-content: center;
+          align-items: center;
           text-align: center;
           font-family: Montserrat, sans-serif;
-          font-optical-sizing: auto;
           font-size: 18pt;
           font-weight: bold;
+          background-color: #40dfaf;
         "
       >
         Ketimpangan Wilayah
@@ -35,16 +36,17 @@
         style="
           height: 100px;
           width: 50%;
-          align-items: center;
+          display: flex;
+          justify-content: center;
           text-align: center;
           margin-left: 20px;
-          padding: 10px;
+          padding: 20px;
           background: url(https://raw.githubusercontent.com/eki1381/Storytelling/main/section11_overlay.png)
             no-repeat center center;
           font-family: Montserrat, sans-serif;
-          font-optical-sizing: auto;
           font-style: normal;
           font-size: 14pt;
+          background-size: cover;
         "
       >
         SDM yang unggul terkonsentrasi pada suatu wilayah, maka ketimpangan
@@ -64,16 +66,17 @@
         style="
           border: 3px solid;
           border-radius: 25px;
-          background-color: #ffdb5e;
           height: 100px;
           width: 50%;
           margin-right: 20px;
+          display: flex;
           justify-content: center;
+          align-items: center;
           text-align: center;
           font-family: Montserrat, sans-serif;
-          font-optical-sizing: auto;
           font-size: 18pt;
           font-weight: bold;
+          background-color: #ffdb5e;
         "
       >
         Permukiman Kumuh
@@ -82,16 +85,18 @@
         style="
           height: 100px;
           width: 50%;
-          align-items: center;
+          display: flex;
+          justify-content: center;
+          text-align: center;
           text-align: center;
           margin-left: 20px;
-          padding: 10px;
+          padding: 20px;
           background: url(https://raw.githubusercontent.com/eki1381/Storytelling/main/section11_overlay.png)
             no-repeat center center;
           font-family: Montserrat, sans-serif;
-          font-optical-sizing: auto;
           font-style: normal;
           font-size: 14pt;
+          background-size: cover;
         "
       >
         Semakin banyak migran datang, ketersediaan perumahan tidak mencukupi dan
@@ -111,16 +116,17 @@
         style="
           border: 3px solid;
           border-radius: 25px;
-          background-color: #dfc6f6;
           height: 100px;
           width: 50%;
           margin-right: 20px;
+          display: flex;
           justify-content: center;
+          align-items: center;
           text-align: center;
           font-family: Montserrat, sans-serif;
-          font-optical-sizing: auto;
           font-size: 18pt;
           font-weight: bold;
+          background-color: #dfc6f6;
         "
       >
         Kriminalitas
@@ -129,16 +135,17 @@
         style="
           height: 100px;
           width: 50%;
-          align-items: center;
+          display: flex;
+          justify-content: center;
           text-align: center;
           margin-left: 20px;
-          padding: 10px;
+          padding: 20px;
           background: url(https://raw.githubusercontent.com/eki1381/Storytelling/main/section11_overlay.png)
             no-repeat center center;
           font-family: Montserrat, sans-serif;
-          font-optical-sizing: auto;
           font-style: normal;
           font-size: 14pt;
+          background-size: cover;
         "
       >
         Para migran yang gagal sukses, tidak bisa pulang ke kampung, cenderung

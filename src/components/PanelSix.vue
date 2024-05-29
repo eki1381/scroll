@@ -1,7 +1,7 @@
 <template>
   <div data-scroll class="panel">
     <div class="center">
-      <div data-scroll data-scroll-speed="2" class="text">
+      <div class="text">
         <div class="title">Lalu, bagaimana pola migrasi saat ini?</div>
         <div class="subtitle">
           Migrasi didominasi oleh usia produktif. Keputusan mereka pindah
