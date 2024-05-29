@@ -20,6 +20,7 @@
 import LocomotiveScroll from "locomotive-scroll";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { onBeforeMount } from 'vue'
 
 import PanelOne from "./components/PanelOne.vue";
 import PanelTwo from "./components/PanelTwo.vue";
@@ -34,6 +35,10 @@ import PanelTen from "./components/PanelTen.vue";
 import PanelEleven from "./components/PanelEleven.vue";
 import PanelTwelve from "./components/PanelTwelve.vue";
 import PanelThirteen from "./components/PanelThirteen.vue";
+
+onBeforeMount(() => {
+    console.log("On Before Mount")
+})
 
 export default {
   name: "App",

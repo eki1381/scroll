@@ -1,6 +1,6 @@
 <template>
   <div data-scroll class="panel">
-    <div class="subtitle" style="text-align: left; margin-top: 0">
+    <div class="subtitle" style="text-align: left; margin-top: 0" data-scroll data-scroll-speed="1">
       Lalu, kenapa semakin banyak orang migrasi? <br> Migrasi seolah melekat pada budaya dan tradisi di Indonesia
     </div>
     <div style="display: flex; flex-direction: row; align-items: center;">

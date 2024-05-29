@@ -1,20 +1,34 @@
 <template>
-  <div data-scroll class="panel" style="padding-top: 0;">
-    <div style="height: 100vh; width: 30vw; z-index: 0; position: relative;">
+  <div data-scroll class="panel" style="padding-top: 0">
+    <div
+      style="height: 100vh; width: 30vw; z-index: 0; position: relative"
+    >
       <v-img
         class="photo"
         :height="'300px'"
         src="https://raw.githubusercontent.com/eki1381/Storytelling/main/section8_photo.png"
-        style="width: 100%; padding: 0;"
+        style="width: 100%; padding: 0"
       ></v-img>
     </div>
-    <div style="width: 80%; display: flex; flex-direction: column; justify-content: center;; z-index: 1; position: absolute; padding-left: 300px">
-      <div class="title" style="margin-bottom: 60px; text-align: center ">'Tawa' Migran dari Mas Bejo</div>
+    <div
+      style="
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 1;
+        position: absolute;
+        padding-left: 300px;
+      "
+    >
+      <div class="title" style="margin-bottom: 60px; text-align: center">
+        'Tawa' Migran dari Mas Bejo
+      </div>
       <v-img
         class="profile"
         :height="'200px'"
         :width="'100%'"
-        style="margin-bottom: 60px; text-align: center;"
+        style="margin-bottom: 60px; text-align: center"
         src="https://raw.githubusercontent.com/eki1381/Storytelling/main/section8_profile.png"
       ></v-img>
       <div class="subtitle">
